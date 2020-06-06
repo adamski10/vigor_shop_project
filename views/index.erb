@@ -1,0 +1,22 @@
+<table style="width:100%">
+  <tr>
+    <th>Poduct name</th>
+    <th>Category</th> 
+    <th>Stock level</th>
+    <th>Manufacturer</th>
+    <th>Buying price</th>
+    <th>Markup</th>
+    <th>Retail price</th>
+  </tr>
+  <tr>
+      <% @products.each do |product| %>
+      <td><%= product.name %></td>
+      <td><%= product.category %></td>
+      <td><%= product.stock_level %></td>
+      <td><%= product.manufacturer %></td>
+      <td><%= product.buying_price %></td>
+      <td><%= product.markup %></td>
+      <td><%= product.retail_price %></td>
+      <% end %>
+  </tr>
+</table>

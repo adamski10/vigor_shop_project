@@ -9,4 +9,5 @@ also_reload( './models/*' )
 
 get '/products' do
   @products  = Product.all()
+  erb( :index )
 end

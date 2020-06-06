@@ -13,7 +13,7 @@ CREATE TABLE products (
   name VARCHAR(255),
   category VARCHAR(255),
   manufacturer_id INT REFERENCES manufacturers(id),
-  wholesale_price FLOAT,
+  buying_price FLOAT,
   markup FLOAT,
   stock_level INT
 );

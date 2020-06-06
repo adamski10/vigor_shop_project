@@ -29,7 +29,7 @@ product1 = Product.new({
   "name" => "Organic Spelt flour",
   "category" => "flour",
   "manufacturer_id" => 1,
-  "wholesale_price" => 1.20,
+  "buying_price" => 1.20,
   "markup" => 0.40,
   "stock_level" => 35
 })
@@ -38,7 +38,7 @@ product2 = Product.new({
   "name" => "Organic cashew nuts",
   "category" => "nuts",
   "manufacturer_id" => 2,
-  "wholesale_price" => 0.80,
+  "buying_price" => 0.80,
   "markup" => 0.40,
   "stock_level" => 20
 })
@@ -47,7 +47,7 @@ product3 = Product.new({
   "name" => "Cold pressed olive oil",
   "category" => "oil",
   "manufacturer_id" => 3,
-  "wholesale_price" => 1.50,
+  "buying_price" => 1.50,
   "markup" => 0.40,
   "stock_level" => 40
 })

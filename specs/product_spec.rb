@@ -8,7 +8,7 @@ class TestProduct < MiniTest::Test
 
   def setup
     options = {"id" => 1, "manufacturer_id" => 1, "name" => "Organic flour", "category" => "flour", 
-    "wholesale_price" => 1.20, "markup" => 0.40, "stock_level" => 35}
+    "buying_price" => 1.20, "markup" => 0.40, "stock_level" => 35}
 
     @organic_flour = Product.new(options)
   end
@@ -23,8 +23,8 @@ class TestProduct < MiniTest::Test
     assert_equal("flour", result)
   end
 
-  def test_wholesale_price()
-    result = @organic_flour.wholesale_price()
+  def test_buying_price()
+    result = @organic_flour.buying_price()
     assert_equal(1.20, result)
   end
 
