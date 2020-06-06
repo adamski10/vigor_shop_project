@@ -10,9 +10,9 @@ CREATE TABLE manufacturers (
 
 CREATE TABLE products (
   id SERIAL primary key,
-  manufacturer_id INT REFERENCES manufacturers(id),
   name VARCHAR(255),
   category VARCHAR(255),
+  manufacturer_id INT REFERENCES manufacturers(id),
   wholesale_price FLOAT,
   markup FLOAT,
   stock_level INT
