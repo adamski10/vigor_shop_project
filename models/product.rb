@@ -8,10 +8,9 @@ class Product
     @id = options['id'] if options['id']
     @manufacturer_id = options['manufacturer.id']
     @name = options['name']
-    @type = options['type']
+    @category = options['type']
     @wholesale_price = options['wholesale_price']
     @markup = options['markup']
-    @retail_price = options['sale_price']
     @stock_level = options['stock_level']
   end
 

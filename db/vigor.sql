@@ -13,7 +13,6 @@ CREATE TABLE products (
   name VARCHAR(255),
   type VARCHAR(255),
   wholesale_price FLOAT,
-  retail_price FLOAT,
   markup FLOAT,
   stock_level INT
 );
