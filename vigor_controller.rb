@@ -11,3 +11,12 @@ get '/products' do
   @products  = Product.all()
   erb( :index )
 end
+
+get '/products/new_product' do
+  @manufacturers = Manufacturer.all()
+  erb( :new_product)
+end
+
+# get '/manufacturers' do
+#   @manufacturers = Manufacturer.all
+# end

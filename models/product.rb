@@ -62,4 +62,8 @@ class Product
     product = SqlRunner.run(sql, values)
     return Product.new(product.first)
   end
+
+  def update()
+    sql = "UPDATE products"
+  end
 end
