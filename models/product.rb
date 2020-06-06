@@ -39,10 +39,27 @@ class Product
     @id = product_data.first()['id'].to_i
   end
   
-  def Product.all()
+  def self.all()
     sql = "SELECT * FROM products"
     products = SqlRunner.run(sql)
     result = products.map { |product| Product.new(product)}
     return result
+  end
+
+  def manufacturer()
+    sql = "SELECT * FROM manufacturers
+    WHERE manufacturers.id = $1"
+    values = [@manufacturer_id]
+    manufacturer = SqlRunner.run(sql, values)
+    result = Manufacturer.new(manufacturer.first)
+    return result
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM products
+    WHERE products.id = $1"
+    values = [id]
+    product = SqlRunner.run(sql, values)
+    return Product.new(product.first)
   end
 end
