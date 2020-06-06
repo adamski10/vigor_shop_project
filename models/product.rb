@@ -9,14 +9,14 @@ class Product
     @name = options['name']
     @category = options['category']
     @manufacturer_id = options['manufacturer_id'].to_i
-    @buying_price = options['buying_price']
-    @markup = options['markup']
+    @buying_price = options['buying_price'].to_f
+    @markup = options['markup'].to_f
     @stock_level = options['stock_level']
   end
 
   def retail_price()
     retail_price = (@buying_price * @markup) + @buying_price
-    return retail_price
+    return retail_price.to_f
   end
 
   def save()
@@ -47,12 +47,12 @@ class Product
   end
 
   def manufacturer()
-    sql = "SELECT name FROM manufacturers
+    sql = "SELECT manufacturers.name FROM manufacturers
     WHERE manufacturers.id = $1"
     values = [@manufacturer_id]
     manufacturer = SqlRunner.run(sql, values)
     result = Manufacturer.new(manufacturer.first)
-    return result
+    return result.name
   end
 
   def self.find(id)

@@ -3,7 +3,7 @@ class Manufacturer
   attr_reader :id, :name, :category, :contact_details
 
   def initialize(options)
-    @id = options['id'] if options['id']
+    @id = options['id'].to_i if options['id']
     @name = options['name']
     @category = options['category']
     @contact_details = options['contact_details']
