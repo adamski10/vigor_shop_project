@@ -17,6 +17,8 @@ get '/products/new_product' do
   erb( :new_product)
 end
 
-# get '/manufacturers' do
-#   @manufacturers = Manufacturer.all
-# end
+post '/products' do
+  @product = Product.new(params)
+  @product.save()
+  redirect to '/products'
+end

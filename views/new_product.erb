@@ -38,15 +38,37 @@
     <th>
       <td>
         <label for="manufacturer-field"></label>
-          <select name="manufacturer" id="manufacturer-field">
+          <select name="manufacturer_id" id="manufacturer-field">
             <option selected disabled>Select from the list</option>
             <% @manufacturers.each do |manufacturer| %>
-            <option value=<%= manufacturer.name %> ><%= manufacturer.name %></option>
+            <option value=<%= manufacturer.id %> ><%= manufacturer.name %></option>
             <% end %>
           </select>
         </td>
     </th>
-    
+    <th>
+      <td>
+        <label for="buying_price-field"></label>
+        <input
+        type="number"
+        name="buying_price"
+        id="buying_price-field"
+        value="Enter number"
+        />
+      </td>
+    </th>
+    <th>
+      <td>
+        <label for="markup-field"></label>
+        <input
+        type="number"
+        name="markup"
+        id="markup-field"
+        value="Enter number"
+        />
+      </td>
+    </th>
   </table>
+  <input type="submit" value="Save">
 </form>
 
