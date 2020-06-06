@@ -4,6 +4,7 @@ DROP TABLE manufacturers;
 CREATE TABLE manufacturers (
   id SERIAL primary key,
   name VARCHAR(255),
+  category VARCHAR(255),
   contact_details VARCHAR(255)
 );
 

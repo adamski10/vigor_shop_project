@@ -4,16 +4,19 @@ require_relative('../models/manufacturer')
 
 manufacturer1 = Manufacturer.new({
   "name" => "Doves Farms",
+  "category" => "flour",
   "contact_details" => "Hungerford, RG17 0RF"
 })
 
 manufacturer2 = Manufacturer.new({
   "name" => "Juste Bio",
+  "category" => "nuts",
   "contact_details" => "France, 0033 234 579"
 })
 
 manufacturer3 = Manufacturer.new({
   "name" => "Kiril Mischeff Limited",
+  "category" => "oil",
   "contact_details" => "Notts, S81 7QF"
 })
 
