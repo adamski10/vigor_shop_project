@@ -5,8 +5,8 @@ class Product
   attr_reader :id, :manufacturer_id, :name, :category, :wholesale_price, :markup, :stock_level
 
   def initialize(options)
-    @id = options['id'] if options['id']
-    @manufacturer_id = options['manufacturer.id']
+    @id = options['id'].to_i if options['id']
+    @manufacturer_id = options['manufacturer_id'].to_i
     @name = options['name']
     @category = options['category']
     @wholesale_price = options['wholesale_price']
@@ -33,7 +33,7 @@ class Product
     (
       $1, $2, $3, $4, $5, $6
     )
-    RETURNING *"
+    RETURNING id"
     values = [@manufacturer_id, @name, @category, @wholesale_price, @markup, @stock_level]
     product_data = SqlRunner.run(sql, values)
     @id = product_data.first()['id'].to_i
