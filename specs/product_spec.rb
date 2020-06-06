@@ -8,7 +8,7 @@ class TestProduct < MiniTest::Test
 
   def setup
     options = {"id" => 1, "manufacturer_id" => 1, "name" => "Organic flour", "category" => "flour", 
-    "wholesale_price" => 0.5, "markup" => 0.15, "stock_level" => 35}
+    "wholesale_price" => 1.20, "markup" => 0.40, "stock_level" => 35}
 
     @organic_flour = Product.new(options)
   end
@@ -21,6 +21,26 @@ class TestProduct < MiniTest::Test
   def test_category()
     result = @organic_flour.category()
     assert_equal("flour", result)
+  end
+
+  def test_wholesale_price()
+    result = @organic_flour.wholesale_price()
+    assert_equal(1.20, result)
+  end
+
+  def test_markup()
+    result = @organic_flour.markup()
+    assert_equal(0.40, result)
+  end
+
+  def test_stock_level()
+    result = @organic_flour.stock_level()
+    assert_equal(35, result)
+  end
+
+  def test_retail_price()
+    result = @organic_flour.retail_price
+    assert_equal(1.68, result)
   end
 
 end

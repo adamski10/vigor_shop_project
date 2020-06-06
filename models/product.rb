@@ -14,4 +14,8 @@ class Product
     @stock_level = options['stock_level']
   end
 
+  def retail_price()
+    retail_price = (@wholesale_price * @markup) + @wholesale_price
+    return retail_price
+  end
 end
