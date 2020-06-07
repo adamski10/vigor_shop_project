@@ -1,0 +1,14 @@
+<table id="manufacturers" style="width:100%">
+  <tr>
+    <th>Manufacturer name</th>
+    <th>Category</th> 
+    <th>Contact details</th>
+  </tr>
+  <% @manufacturers.each do |manufacturer| %>
+  <tr>
+    <td><%= manufacturer.name %></td>
+    <td><%= manufacturer.category %></td>
+    <td><%= manufacturer.contact_details %></td>
+  </tr>
+  <% end %>
+</table>

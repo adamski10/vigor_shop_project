@@ -1,0 +1,40 @@
+<form method="post" action="/manufacturers">
+  <table>
+    <th>
+      <td>
+        <label for="manufacturer-name-field"></label>
+        <input
+        type="text"
+        name="name"
+        id="manufacturer-name-field"
+        value="Enter name"
+        />
+      </td>
+    </th>
+    <th>
+      <td>
+        <label for="category-field"></label>
+          <select name="category" id="category-field">
+            <option value="flour">Flour</option>
+            <option value="Nuts">Nuts</option>
+            <option value="Oil">Oil</option>
+            <option value="Fruit">Fruit</option>
+            <option value="Herbs">Herbs</option>
+            <option value="Vegetable">Vegetable</option>
+          </select>
+        </td>
+    </th>
+    <th>
+      <td>
+        <label for="contact-details-field"></label>
+        <input
+        type="text"
+        name="contact_details"
+        id="contact-details-field"
+        value="Enter contact details"
+        />
+      </td>
+    </th>
+  </table>
+  <input type="submit" value="Save">
+</form>

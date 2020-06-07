@@ -8,11 +8,11 @@ require_relative( '../models/manufacturer' )
 also_reload( './models/*' )
 
 get '/manufacturers' do
-  @products  = Manufacturer.all()
+  @manufacturers  = Manufacturer.all()
   erb( :"manufacturers/index" )
 end
 
-get '/msnufscturers/new' do
+get '/manufacturers/new' do
   erb( :"manufacturers/new")
 end
 

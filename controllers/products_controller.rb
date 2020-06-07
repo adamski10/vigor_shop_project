@@ -17,6 +17,11 @@ get '/products/new' do
   erb( :"products/new")
 end
 
+get '/products/low' do
+  @products = Product.lowstock()
+  erb( :"products/low")
+end
+
 post '/products' do
   @product = Product.new(params)
   @product.save()
