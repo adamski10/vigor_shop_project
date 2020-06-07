@@ -12,9 +12,9 @@ get '/products' do
   erb( :"products/index" )
 end
 
-get '/products/new_product' do
+get '/products/new' do
   @manufacturers = Manufacturer.all()
-  erb( :"products/new_product")
+  erb( :"products/new")
 end
 
 post '/products' do
