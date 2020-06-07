@@ -2,19 +2,19 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry' )
 
-require_relative( './models/product' )
-require_relative( './models/manufacturer' )
+require_relative( '../models/product' )
+require_relative( '../models/manufacturer' )
 
 also_reload( './models/*' )
 
 get '/products' do
   @products  = Product.all()
-  erb( :index )
+  erb( :"products/index" )
 end
 
 get '/products/new_product' do
   @manufacturers = Manufacturer.all()
-  erb( :new_product)
+  erb( :"products/new_product")
 end
 
 post '/products' do
