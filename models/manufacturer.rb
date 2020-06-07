@@ -46,8 +46,9 @@ class Manufacturer
     sql = "SELECT * FROM manufacturers
     WHERE manufacturers.category = $1"
     values = [category]
-    manufacturer = SqlRunner.run(sql, values)
-    return Manufacturer.new(manufacturer.first)
+    manufacturers = SqlRunner.run(sql, values)
+    result = manufacturers.map { |manufacturer| Manufacturer.new(manufacturer) }
+    return result
   end
   
   def update()

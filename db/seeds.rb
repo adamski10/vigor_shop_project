@@ -20,9 +20,16 @@ manufacturer3 = Manufacturer.new({
   "contact_details" => "Notts, S81 7QF"
 })
 
+manufacturer4 = Manufacturer.new({
+  "name" => "Little Salked Watermill",
+  "category" => "flour",
+  "contact_details" => "Penrith, CA10 INN"
+})
+
 manufacturer1.save()
 manufacturer2.save()
 manufacturer3.save()
+manufacturer4.save()
 
 
 product1 = Product.new({
@@ -52,9 +59,20 @@ product3 = Product.new({
   "stock_level" => 40
 })
 
+product4 = Product.new({
+  "name" => "Organic Rye flour",
+  "category" => "flour",
+  "manufacturer_id" => 1,
+  "buying_price" => 1.20,
+  "markup" => 0.40,
+  "stock_level" => 35
+})
+
+
 product1.save()
 product2.save()
 product3.save()
+product4.save()
 
 binding.pry
 nil

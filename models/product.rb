@@ -64,6 +64,15 @@ class Product
     return Product.new(product.first)
   end
 
+  def self.find(category)
+    sql = "SELECT * FROM products
+    WHERE products.category = $1"
+    values = [category]
+    products = SqlRunner.run(sql, values)
+    result = products.map { |product| Product.new(product) }
+    return result
+  end
+
   def update()
     sql = "UPDATE products
     SET
@@ -79,6 +88,6 @@ class Product
     )
     WHERE id = $6"
     values = [@name, @category, @buying_price, @markup, @stock_level, @id]
-    SqlRunner.run(sql,values)
+    SqlRunner.run(sql, values)
   end
 end
