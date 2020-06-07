@@ -1,0 +1,52 @@
+<form method="post" action="/manufacturers/<%= @manufacturer.id %>">
+  <table>
+    <th>
+      <td>
+        <label for="manufacturer-name-field"></label>
+        <input
+        type="text"
+        name="name"
+        id="manufacturer-name-field"
+        value="<%= @manufacturer.name %>"
+        />
+      </td>
+    </th>
+    <th>
+      <td>
+        <label for="category-field"></label>
+          <select name="category" id="category-field">
+            <option value="flour"
+            <%= "selected" if @manufacturer.category == "Flour"%>
+            >Flour</option>
+            <option value="Nuts"
+            <%= "selected" if @manufacturer.category == "Nuts"%>
+            >Nuts</option>
+            <option value="Oil"
+            <%= "selected" if @manufacturer.category == "Oil"%>
+            >Oil</option>
+            <option value="Fruit"
+            <%= "selected" if @manufacturer.category == "Fruit"%>
+            >Fruit</option>
+            <option value="Herbs"
+            <%= "selected" if @manufacturer.category == "Herbs"%>
+            >Herbs</option>
+            <option value="Vegetable"
+            <%= "selected" if @manufacturer.category == "Vegetable"%>
+            >Vegetable</option>
+          </select>
+        </td>
+    </th>
+    <th>
+      <td>
+        <label for="contact-details-field"></label>
+        <input
+        type="text"
+        name="contact_details"
+        id="contact-details-field"
+        value="<%= @manufacturer.contact_details %>"
+        />
+      </td>
+    </th>
+  </table>
+  <input type="submit" value="Save">
+</form>

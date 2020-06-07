@@ -36,7 +36,7 @@ class Manufacturer
 
   def self.find(id)
     sql = "SELECT * FROM manufacturers
-    WHERE manufacturers.id = $1"
+    WHERE id = $1"
     values = [id]
     manufacturer = SqlRunner.run(sql, values)
     return Manufacturer.new(manufacturer.first)

@@ -6,7 +6,7 @@
   </tr>
   <% @manufacturers.each do |manufacturer| %>
   <tr>
-    <td><%= manufacturer.name %></td>
+    <td><a href="manufacturers/<%= manufacturer.id %>"><%= manufacturer.name %></td>
     <td><%= manufacturer.category %></td>
     <td><%= manufacturer.contact_details %></td>
   </tr>
