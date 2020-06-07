@@ -1,22 +1,15 @@
-table#products, th, td {
+.table th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
-th, td {
+.table th, td {
   padding: 5px;
 }
-th {
+.table th {
+  text-align: center;
+}
+.table td {
   text-align: left;
 }
 
 
-table#low-stock, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-th, td {
-  padding: 5px;
-}
-th {
-  text-align: left;
-}

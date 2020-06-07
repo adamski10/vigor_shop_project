@@ -1,4 +1,4 @@
-<form method="post" action="/products">
+<form method="post" action="/products/<%= @product.id %>">
   <table class="table">
     <th>
       <td>
@@ -7,7 +7,7 @@
         type="text"
         name="name"
         id="product-name-field"
-        value="Enter product name"
+        value="<%= @product.name %>"
         />
       </td>
     </th>
@@ -15,12 +15,24 @@
       <td>
         <label for="category-field"></label>
           <select name="category" id="category-field">
-            <option value="flour">Flour</option>
-            <option value="Nuts">Nuts</option>
-            <option value="Oil">Oil</option>
-            <option value="Fruit">Fruit</option>
-            <option value="Herbs">Herbs</option>
-            <option value="Vegetable">Vegetable</option>
+            <option value="flour"
+            <%= "selected" if @product.category == "Flour"%>
+            >Flour</option>
+            <option value="Nuts"
+            <%= "selected" if @product.category == "Nuts"%>
+            >Nuts</option>
+            <option value="Oil"
+            <%= "selected" if @product.category == "Oil"%>
+            >Oil</option>
+            <option value="Fruit"
+            <%= "selected" if @product.category == "Fruit"%>
+            >Fruit</option>
+            <option value="Herbs"
+            <%= "selected" if @product.category == "Herbs"%>
+            >Herbs</option>
+            <option value="Vegetable"
+            <%= "selected" if @product.category == "Vegetable"%>
+            >Vegetable</option>
           </select>
         </td>
     </th>
@@ -31,7 +43,7 @@
         type="number"
         name="stock_level"
         id="stock_level-field"
-        value="Enter number"
+        value="<%= @product.stock_level %>"
         />
       </td>
     </th>
@@ -41,7 +53,7 @@
           <select name="manufacturer_id" id="manufacturer-field">
             <option selected disabled>Select from the list</option>
             <% @manufacturers.each do |manufacturer| %>
-            <option value=<%= manufacturer.id %> ><%= manufacturer.name %></option>
+            <option value=<%= "selected" if @product.manufacturer_id == manufacturer.id %> ><%= manufacturer.name %></option>
             <% end %>
           </select>
         </td>
@@ -53,7 +65,7 @@
         type="float"
         name="buying_price"
         id="buying_price-field"
-        value="Enter number"
+        value="<%= @product.buying_price%>"
         />
       </td>
     </th>
@@ -64,11 +76,10 @@
         type="float"
         name="markup"
         id="markup-field"
-        value="Enter number"
+        value="<%= @product.markup %>"
         />
       </td>
     </th>
   </table>
   <input type="submit" value="Save">
 </form>
-
