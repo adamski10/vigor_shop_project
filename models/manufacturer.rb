@@ -1,6 +1,7 @@
 class Manufacturer
 
-  attr_reader :id, :name, :category, :contact_details
+  attr_accessor  :name, :category, :contact_details
+  attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -41,4 +42,19 @@ class Manufacturer
     return Manufacturer.new(manufacturer.first)
   end
   
+  def update()
+    sql = "UPDATE manufacturers
+    SET
+    (
+      name,
+      category,
+      contact_details
+    ) =
+    (
+      $1, $2, $3
+    )
+    WHERE id = $4"
+    values = [@name, @category, @contact_details, @id]
+    SqlRunner.run(sql, values)
+  end
 end
