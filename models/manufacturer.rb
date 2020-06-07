@@ -42,7 +42,7 @@ class Manufacturer
     return Manufacturer.new(manufacturer.first)
   end
 
-  def self.find(category)
+  def self.find_by_category(category)
     sql = "SELECT * FROM manufacturers
     WHERE manufacturers.category = $1"
     values = [category]

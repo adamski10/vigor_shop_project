@@ -58,13 +58,13 @@ class Product
 
   def self.find(id)
     sql = "SELECT * FROM products
-    WHERE products.id = $1"
+    WHERE id = $1"
     values = [id]
     product = SqlRunner.run(sql, values)
     return Product.new(product.first)
   end
 
-  def self.find(category)
+  def self.find_by_category(category)
     sql = "SELECT * FROM products
     WHERE products.category = $1"
     values = [category]

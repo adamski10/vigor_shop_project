@@ -10,7 +10,7 @@
   </tr>
   <% @products.each do |product| %>
   <tr>
-    <td><%= product.name %></td>
+    <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
     <td><%= product.category %></td>
     <td><%= product.stock_level %></td>
     <td><%= product.manufacturer %></td>

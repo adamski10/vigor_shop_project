@@ -51,9 +51,8 @@
       <td>
         <label for="manufacturer-field"></label>
           <select name="manufacturer_id" id="manufacturer-field">
-            <option selected disabled>Select from the list</option>
             <% @manufacturers.each do |manufacturer| %>
-            <option value=<%= "selected" if @product.manufacturer_id == manufacturer.id %> ><%= manufacturer.name %></option>
+            <option value=<%= "selected" if manufacturer.id == true %> ><%= manufacturer.name %></option>
             <% end %>
           </select>
         </td>
@@ -81,5 +80,5 @@
       </td>
     </th>
   </table>
-  <input type="submit" value="Save">
+  <input type="submit" value="Update">
 </form>

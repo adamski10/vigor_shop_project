@@ -22,13 +22,25 @@ get '/products/low' do
   erb( :"products/low")
 end
 
+get '/products/:id' do
+  @product = Product.find(params[:id])
+  erb( :"products/show")
+end
+
 post '/products' do
   @product = Product.new(params)
   @product.save()
   redirect to '/products'
 end
 
-post '/products/:id/edit' do
+get '/products/:id/edit' do
   @product = Product.find( params[:id] )
+  @manufacturers = Manufacturer.all()
   erb(:"products/edit")
+end
+
+post '/products/:id' do
+  updated_product = Product.new( params )
+  updated_product.update
+  redirect to '/products'
 end
