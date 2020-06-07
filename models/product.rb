@@ -73,6 +73,15 @@ class Product
     return result
   end
 
+  def self.lowstock()
+    sql = "SELECT * FROM products
+    WHERE products.stock_level <= $1"
+    values = [5]
+    products = SqlRunner.run(sql, values)
+    result = products.map { |product| Product.new(product) }
+    return result
+  end
+
   def update()
     sql = "UPDATE products
     SET
