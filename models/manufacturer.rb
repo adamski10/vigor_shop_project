@@ -41,6 +41,14 @@ class Manufacturer
     manufacturer = SqlRunner.run(sql, values)
     return Manufacturer.new(manufacturer.first)
   end
+
+  def self.find(category)
+    sql = "SELECT * FROM manufacturers
+    WHERE manufacturers.category = $1"
+    values = [category]
+    manufacturer = SqlRunner.run(sql, values)
+    return Manufacturer.new(manufacturer.first)
+  end
   
   def update()
     sql = "UPDATE manufacturers
