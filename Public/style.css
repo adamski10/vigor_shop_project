@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(241, 242, 235);
+}
+
 #container > div.system {
   display: flex;
   flex-direction: column;
@@ -59,11 +63,13 @@
 }
 
 .footer {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   width:100%;
   height: 5mm;
   position:fixed;
   bottom:0;
+  background-color: rgb(164, 194, 165);
   
 }
 /* td, th {
