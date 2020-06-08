@@ -1,73 +1,67 @@
+<link rel="stylesheet" href="../style.css">
 <form method="post" action="/products">
   <table class="table">
-    <th>
-      <td>
-        <label for="product-name-field"></label>
-        <input
-        type="text"
-        name="name"
-        id="product-name-field"
-        value="Enter product name"
-        />
-      </td>
-    </th>
-    <th>
-      <td>
-        <label for="category-field"></label>
-          <select name="category" id="category-field">
-            <option value="flour">Flour</option>
-            <option value="Nuts">Nuts</option>
-            <option value="Oil">Oil</option>
-            <option value="Fruit">Fruit</option>
-            <option value="Herbs">Herbs</option>
-            <option value="Vegetable">Vegetable</option>
-          </select>
-        </td>
-    </th>
-    <th>
-      <td>
-        <label for="stock_level-field"></label>
-        <input
-        type="number"
-        name="stock_level"
-        id="stock_level-field"
-        value="Enter number"
-        />
-      </td>
-    </th>
-    <th>
-      <td>
-        <label for="manufacturer-field"></label>
-          <select name="manufacturer_id" id="manufacturer-field">
-            <option selected disabled>Select from the list</option>
-            <% @manufacturers.each do |manufacturer| %>
-            <option value=<%= manufacturer.id %> ><%= manufacturer.name %></option>
-            <% end %>
-          </select>
-        </td>
-    </th>
-    <th>
-      <td>
-        <label for="buying_price-field"></label>
-        <input
-        type="float"
-        name="buying_price"
-        id="buying_price-field"
-        value="Enter number"
-        />
-      </td>
-    </th>
-    <th>
-      <td>
-        <label for="markup-field"></label>
-        <input
-        type="float"
-        name="markup"
-        id="markup-field"
-        value="Enter number"
-        />
-      </td>
-    </th>
+    <td>
+      <label for="product-name-field">Enter product name</label>
+      <input
+      type="text"
+      name="name"
+      id="product-name-field"
+      value=""
+      />
+    </td>
+    <td>
+      <label for="category-field">Enter category</label>
+        <select name="category" id="category-field">
+          <option value="flour">Flour</option>
+          <option value="Nuts">Nuts</option>
+          <option value="Oil">Oil</option>
+          <option value="Fruit">Fruit</option>
+          <option value="Herbs">Herbs</option>
+          <option value="Vegetable">Vegetable</option>
+        </select>
+    </td>
+    <td>
+      <label for="stock_level-field">Current stock</label>
+      <input
+      type="number"
+      name="stock_level"
+      id="stock_level-field"
+      value="Enter number"
+      />
+    </td>
+    <td>
+      <label for="manufacturer-field">Manufacturer</label>
+        <select name="manufacturer_id" id="manufacturer-field">
+          <option selected disabled>Select from the list</option>
+          <% @manufacturers.each do |manufacturer| %>
+          <option value=<%= manufacturer.id %> ><%= manufacturer.name %></option>
+          <% end %>
+        </select>
+    </td>
+    <td>
+      <label for="buying_price-field">Buying price</label>
+      <input
+      type="number"
+      min="0"
+      step="0.1"
+      name="buying_price"
+      id="buying_price-field"
+      value="Enter number"
+      />
+    </td>
+    <td>
+      <label for="markup-field">Markup</label>
+      <input
+      type="number"
+      min="0"
+      max="1"
+      step="0.01"
+      name="markup"
+      id="markup-field"
+      value="Enter number"
+      />
+    </td>
   </table>
   <input type="submit" value="Save">
 </form>

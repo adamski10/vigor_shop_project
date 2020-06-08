@@ -1,9 +1,9 @@
-/* .table th, td {
+.table th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
 .table th, td {
-  padding: 5px;
+  padding: 8px;
 }
 .table th {
   text-align: center;
@@ -11,17 +11,15 @@
 .table td {
   text-align: left;
 }
-.stock td[value="1"] {
-  background-color: red;
-} */
+
 
 .low {
   background-color:red
 }
 
-td, th {
+/* td, th {
   border: 1px solid #999;
   padding: 0.5rem;
-}
+} */
 
 
