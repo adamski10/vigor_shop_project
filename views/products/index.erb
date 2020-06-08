@@ -15,10 +15,12 @@
     <tr>
       <td><a href="/products/<%= product.id %>"><%= product.name %></a></td>
       <td><%= product.category %></td>
-    <% if product.stock_level.to_i <= 5 %>
+    <% if product.stock_level.to_i > 0 && product.stock_level.to_i <= 5 %>
       <td class="low"><%= product.stock_level %></td>
+    <% elsif product.stock_level.to_i == 0 %>
+      <td class="nostock">Not in stock</td>
     <% else %>
-      <td class="normal"><%= product.stock_level %></td>
+      <td><%= product.stock_level %></td>
     <% end %>
       <td><%= product.manufacturer %></td>
       <td>£ <%= sprintf('%.2f', product.buying_price) %></td>

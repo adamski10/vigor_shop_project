@@ -14,7 +14,15 @@
 
 
 .low {
-  background-color:red
+  background-color: orangered;
+}
+
+.center {
+  text-align: center;
+}
+
+.nostock {
+  background-color: red;
 }
 
 /* td, th {
