@@ -1,19 +1,31 @@
-#container {
+#container > div.system {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-content: space-around;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-weight: bold;
-  background-color: rgb(216, 211, 218)
+  text-align: center;
 }
 
-#system {
-  width: 100px;
-  
+
+
+#container > div.system > div.name {
+  width: 400px;
+  height: 50px;
+  padding: 20px;
+  background-color: rgb(209, 59, 13)
 }
 
-#prompt {
-  width: 100px;
+#container > div.system > div.prompt {
+  width: 400px;
+  height: 50px;
+  padding: 20px;
+  background-color: rgb(156, 113, 173)
+}
+
+.menu-bar {
+  display: flex;
+  justify-content: space-between;
   
 }
 
