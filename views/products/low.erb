@@ -1,22 +1,26 @@
 <table id="low" style="width:100%">
-  <tr>
-    <th>Product name</th>
-    <th>Category</th> 
-    <th>Stock level</th>
-    <th>Manufacturer</th>
-    <th>Buying price</th>
-    <th>Markup</th>
-    <th>Retail price</th>
-  </tr>
-  <% @products.each do |product| %>
-  <tr>
-    <td><%= product.name %></td>
-    <td><%= product.category %></td>
-    <td id="low-stock"><%= product.stock_level %></td>
-    <td><%= product.manufacturer %></td>
-    <td>£ <%= sprintf('%.2f', product.buying_price) %></td>
-    <td><%= sprintf('%.2f', product.markup * 100) %> % </td>
-    <td>£ <%= sprintf('%.2f', product.retail_price) %></td>
-  </tr>
-  <% end %>
+  <thead>
+    <tr>
+      <th>Product name</th>
+      <th>Category</th> 
+      <th>Stock level</th>
+      <th>Manufacturer</th>
+      <th>Buying price</th>
+      <th>Markup</th>
+      <th>Retail price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.category %></td>
+      <td id="low-stock"><%= product.stock_level %></td>
+      <td><%= product.manufacturer %></td>
+      <td>£ <%= sprintf('%.2f', product.buying_price) %></td>
+      <td><%= sprintf('%.2f', product.markup * 100) %> % </td>
+      <td>£ <%= sprintf('%.2f', product.retail_price) %></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>

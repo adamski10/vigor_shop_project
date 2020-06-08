@@ -1,4 +1,4 @@
-.table th, td {
+/* .table th, td {
   border: 1px solid black;
   border-collapse: collapse;
 }
@@ -10,6 +10,18 @@
 }
 .table td {
   text-align: left;
+}
+.stock td[value="1"] {
+  background-color: red;
+} */
+
+.low {
+  background-color:red
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
 }
 
 
