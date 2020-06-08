@@ -1,40 +1,37 @@
+<link rel="stylesheet" href="../style.css">
 <form method="post" action="/manufacturers">
-  <table>
-    <th>
-      <td>
-        <label for="manufacturer-name-field"></label>
-        <input
-        type="text"
-        name="name"
-        id="manufacturer-name-field"
-        value="Enter name"
-        />
-      </td>
-    </th>
-    <th>
-      <td>
-        <label for="category-field"></label>
-          <select name="category" id="category-field">
-            <option value="flour">Flour</option>
-            <option value="Nuts">Nuts</option>
-            <option value="Oil">Oil</option>
-            <option value="Fruit">Fruit</option>
-            <option value="Herbs">Herbs</option>
-            <option value="Vegetable">Vegetable</option>
-          </select>
-        </td>
-    </th>
-    <th>
-      <td>
-        <label for="contact-details-field"></label>
-        <input
-        type="text"
-        name="contact_details"
-        id="contact-details-field"
-        value="Enter contact details"
-        />
-      </td>
-    </th>
+  <table class="table" style="width:50%">
+    <td>
+      <label for="manufacturer-name-field">Name</label>
+      <input
+      type="text"
+      name="name"
+      id="manufacturer-name-field"
+      value=""
+      />
+    </td>
+    <td>
+      <label for="category-field">Category</label>
+        <select name="category" id="category-field">
+          <option value="flour">Flour</option>
+          <option value="Fruit">Fruit</option>
+          <option value="Grain">Grain</option>
+          <option value="Herbs">Herbs</option>
+          <option value="Honey">Honey</option>
+          <option value="Nuts">Nuts</option>
+          <option value="Oil">Oil</option>
+          <option value="Vegetable">Vegetable</option>
+        </select>
+    </td>
+    <td>
+      <label for="contact-details-field">Contact details</label>
+      <input
+      type="text"
+      name="contact_details"
+      id="contact-details-field"
+      value="Enter contact details"
+      />
+    </td>
   </table>
   <input type="submit" value="Save">
 </form>

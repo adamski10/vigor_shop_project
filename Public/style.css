@@ -1,3 +1,22 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  background-color: rgb(216, 211, 218)
+}
+
+#system {
+  width: 100px;
+  
+}
+
+#prompt {
+  width: 100px;
+  
+}
+
 .table th, td {
   border: 1px solid black;
   border-collapse: collapse;
@@ -12,18 +31,14 @@
   text-align: left;
 }
 
-
 .low {
   background-color: orangered;
-}
-
-.center {
-  text-align: center;
 }
 
 .nostock {
   background-color: red;
 }
+
 
 /* td, th {
   border: 1px solid #999;

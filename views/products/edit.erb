@@ -1,84 +1,79 @@
 <form method="post" action="/products/<%= @product.id %>">
   <table class="table">
-    <th>
-      <td>
-        <label for="product-name-field"></label>
-        <input
-        type="text"
-        name="name"
-        id="product-name-field"
-        value="<%= @product.name %>"
-        />
+    <td>
+      <label for="product-name-field"></label>
+      <input
+      type="text"
+      name="name"
+      id="product-name-field"
+      required
+      value="<%= @product.name %>"
+      />
+    </td>
+    <td>
+      <label for="category-field"></label>
+        <select name="category" id="category-field">
+          <option value="flour"
+          <%= "selected" if @product.category == "Flour"%>
+          >Flour</option>
+          <option value="Fruit"
+          <%= "selected" if @product.category == "Fruit"%>
+          >Fruit</option>
+          <option value="Grain"
+          <%= "selected" if @product.category == "Grain"%>
+          >Grain</option>
+          <option value="Herbs"
+          <%= "selected" if @product.category == "Herbs"%>
+          >Herbs</option>
+          <option value="Honey"
+          <%= "selected" if @product.category == "Honey"%>
+          >Honey</option>
+          <option value="Nuts"
+          <%= "selected" if @product.category == "Nuts"%>
+          >Nuts</option>
+          <option value="Oil"
+          <%= "selected" if @product.category == "Oil"%>
+          >Oil</option>
+          <option value="Vegetable"
+          <%= "selected" if @product.category == "Vegetable"%>
+          >Vegetable</option>
+        </select>
       </td>
-    </th>
-    <th>
-      <td>
-        <label for="category-field"></label>
-          <select name="category" id="category-field">
-            <option value="flour"
-            <%= "selected" if @product.category == "Flour"%>
-            >Flour</option>
-            <option value="Nuts"
-            <%= "selected" if @product.category == "Nuts"%>
-            >Nuts</option>
-            <option value="Oil"
-            <%= "selected" if @product.category == "Oil"%>
-            >Oil</option>
-            <option value="Fruit"
-            <%= "selected" if @product.category == "Fruit"%>
-            >Fruit</option>
-            <option value="Herbs"
-            <%= "selected" if @product.category == "Herbs"%>
-            >Herbs</option>
-            <option value="Vegetable"
-            <%= "selected" if @product.category == "Vegetable"%>
-            >Vegetable</option>
-          </select>
-        </td>
-    </th>
-    <th>
-      <td>
-        <label for="stock_level-field"></label>
-        <input
-        type="number"
-        name="stock_level"
-        id="stock_level-field"
-        value="<%= @product.stock_level %>"
-        />
+    <td>
+      <label for="stock_level-field"></label>
+      <input
+      type="number"
+      name="stock_level"
+      id="stock_level-field"
+      value="<%= @product.stock_level %>"
+      />
+    </td>
+    <td>
+      <label for="manufacturer-field"></label>
+        <select name="manufacturer_id" id="manufacturer-field">
+          <% @manufacturers.each do |manufacturer| %>
+          <option value=<%= "selected" if manufacturer.id == true %> ><%= manufacturer.name %></option>
+          <% end %>
+        </select>
       </td>
-    </th>
-    <th>
-      <td>
-        <label for="manufacturer-field"></label>
-          <select name="manufacturer_id" id="manufacturer-field">
-            <% @manufacturers.each do |manufacturer| %>
-            <option value=<%= "selected" if manufacturer.id == true %> ><%= manufacturer.name %></option>
-            <% end %>
-          </select>
-        </td>
-    </th>
-    <th>
-      <td>
-        <label for="buying_price-field"></label>
-        <input
-        type="float"
-        name="buying_price"
-        id="buying_price-field"
-        value="<%= @product.buying_price%>"
-        />
-      </td>
-    </th>
-    <th>
-      <td>
-        <label for="markup-field"></label>
-        <input
-        type="float"
-        name="markup"
-        id="markup-field"
-        value="<%= @product.markup %>"
-        />
-      </td>
-    </th>
+    <td>
+      <label for="buying_price-field"></label>
+      <input
+      type="float"
+      name="buying_price"
+      id="buying_price-field"
+      value="<%= @product.buying_price%>"
+      />
+    </td>
+    <td>
+      <label for="markup-field"></label>
+      <input
+      type="float"
+      name="markup"
+      id="markup-field"
+      value="<%= @product.markup %>"
+      />
+    </td>
   </table>
   <input type="submit" value="Update">
 </form>
