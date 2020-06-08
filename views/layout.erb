@@ -3,18 +3,24 @@
 <head>
   <title>Vigor foods</title>
   <link rel="stylesheet" href="style.css">
+  
 </head>
 <body>
 <nav>
   <section class="menu-bar">
-    <img src="../vigor_logo.png">
-    <a href="/products/low">Low Stock</a>
-    <a href="/products/new">Add new product</a>
-    <a href="/manufacturers/new">Add new manufacturer</a>
-    <a href="/manufacturers">Manufacturers</a>
-    <a href="/products">Products</a>
+    <img class="logo"src="../vigor_logo.png">
+    <div class="link"><a href="/products/low">Low Stock</a></div>
+    <div class="link"><a href="/products/new">Add new product</a></div>
+    <div class="link"><a href="/manufacturers/new">Add new manufacturer</a></div>
+    <div class="link"><a href="/manufacturers">Manufacturers</a></div>
+    <div class="link"><a href="/products">Products</a></div>
   </section>
 </nav>
   <%= yield %>
+  <footer>
+    <table class="footer">
+     <td>Vigor Foods LTD.</td>
+    </table>
+  </footer>
 </body>
 </html>
