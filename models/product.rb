@@ -2,7 +2,7 @@ require_relative('../db/sql_runner.rb')
 
 class Product
 
-  attr_accessor :manufacturer_id, :name, :category, :buying_price, :markup, :stock_level
+  attr_accessor :manufacturer_id, :name, :category, :buying_price, :markup, :units, :stock_level
   attr_reader :id
 
   def initialize(options)
@@ -12,6 +12,7 @@ class Product
     @manufacturer_id = options['manufacturer_id'].to_i
     @buying_price = options['buying_price'].to_f
     @markup = options['markup'].to_f
+    @units = options['units']
     @stock_level = options['stock_level']
   end
 
@@ -29,14 +30,15 @@ class Product
       manufacturer_id,
       buying_price,
       markup,
+      units,
       stock_level
     )
     VALUES
     (
-      $1, $2, $3, $4, $5, $6
+      $1, $2, $3, $4, $5, $6, $7
     )
     RETURNING *"
-    values = [@name, @category, @manufacturer_id, @buying_price, @markup, @stock_level]
+    values = [@name, @category, @manufacturer_id, @buying_price, @markup, @units, @stock_level]
     product_data = SqlRunner.run(sql, values)
     @id = product_data.first()['id'].to_i
   end
@@ -92,13 +94,14 @@ class Product
       manufacturer_id,
       buying_price,
       markup,
+      units,
       stock_level
     ) =
     (
-      $1, $2, $3, $4, $5, $6
+      $1, $2, $3, $4, $5, $6, $7
     )
-    WHERE id = $7"
-    values = [@name, @category, @manufacturer_id, @buying_price, @markup, @stock_level, @id]
+    WHERE id = $8"
+    values = [@name, @category, @manufacturer_id, @buying_price, @markup, @units, @stock_level, @id]
     SqlRunner.run(sql, values)
   end
 

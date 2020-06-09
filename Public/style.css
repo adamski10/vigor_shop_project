@@ -3,7 +3,7 @@ body {
 }
 
 #container {
-  background-color:#97A682;
+  background-color:#BAD1BB;
 }
 
 #container > div.system > div.name {
@@ -11,6 +11,7 @@ body {
   justify-content: space-around;
   align-items: center;
   font-size: 20mm;
+  font-weight: lighter;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   height: 300px;
 }
@@ -18,7 +19,6 @@ body {
 
 .menu-bar {
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
   
 }

@@ -4,7 +4,8 @@
   <thead>
     <tr>
       <th>Product name</th>
-      <th>Category</th> 
+      <th>Category</th>
+      <th>Units</th> 
       <th>Stock level</th>
       <th>Manufacturer</th>
       <th>Buying price</th>
@@ -17,6 +18,7 @@
     <tr>
       <td><%= product.name %></td>
       <td><%= product.category %></td>
+      <td><%= product.units %></td>
       <td id="low-stock"><%= product.stock_level %></td>
       <td><%= product.manufacturer %></td>
       <td>£ <%= sprintf('%.2f', product.buying_price) %></td>

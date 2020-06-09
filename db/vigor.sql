@@ -15,6 +15,7 @@ CREATE TABLE products (
   manufacturer_id INT REFERENCES manufacturers(id),
   buying_price FLOAT,
   markup FLOAT,
+  units VARCHAR(255),
   stock_level INT
 );
 

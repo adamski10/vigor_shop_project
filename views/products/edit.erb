@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/style.css">
 <h2 class="stock">Edit product</h2>
 <form method="post" action="/products/<%= @product.id %>">
-  <table class="table">
+  <table class="table" style="width:100%">
     <td>
       <label for="product-name-field"></label>
       <input
@@ -40,9 +40,19 @@
           <%= "selected" if @product.category == "Vegetable"%>
           >Vegetable</option>
         </select>
-      </td>
+    </td>
     <td>
-      <label for="stock_level-field"></label>
+    <label for="units-field">Units</label>
+        <select name="units" id="units-field" required>
+          <option value="kg" <%= "selected" if @product.units == "kg"%>>kg</option>
+          <option value="l" <%= "selected" if @product.units == "l"%>>l</option>
+          <option value="t" <%= "selected" if @product.units == "t"%>>t</option>>
+          <option value="lbs" <%= "selected" if @product.units == "lbs"%>>lbs</option>
+          <option value="g" <%= "selected" if @product.units == "g"%>>g</option>
+        </select>
+    </td>
+    <td>
+      <label for="stock_level-field">Stock level</label>
       <input
       type="number"
       name="stock_level"
@@ -60,7 +70,7 @@
         </select>
       </td>
     <td>
-      <label for="buying_price-field"></label>
+      <label for="buying_price-field">Buying price</label>
       <input
       type="float"
       name="buying_price"
@@ -70,7 +80,7 @@
       />
     </td>
     <td>
-      <label for="markup-field"></label>
+      <label for="markup-field">Markup</label>
       <input
       type="float"
       name="markup"
@@ -80,5 +90,8 @@
       />
     </td>
   </table>
-  <input type="submit" value="Update">
+  <div class="save-button">
+    <input type="submit" value="Update">
+  </div>
 </form>
+

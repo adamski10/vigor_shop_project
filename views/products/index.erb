@@ -4,6 +4,7 @@
     <tr>
       <th>Product name</th>
       <th>Category</th> 
+      <th>Units</th>
       <th>Stock level</th>
       <th>Manufacturer</th>
       <th>Buying price</th>
@@ -16,6 +17,7 @@
     <tr>
       <td><a class="link" href="/products/<%= product.id %>"><%= product.name %></a></td>
       <td><%= product.category %></td>
+      <td><%= product.units %></td>
     <% if product.stock_level.to_i > 0 && product.stock_level.to_i <= 5 %>
       <td class="low"><%= product.stock_level %></td>
     <% elsif product.stock_level.to_i == 0 %>
