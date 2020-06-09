@@ -4,6 +4,8 @@ require( 'pry' )
 
 require_relative( '../models/product' )
 require_relative( '../models/manufacturer' )
+require_relative( '../models/shop' )
+
 
 also_reload( './models/*' )
 
@@ -20,6 +22,11 @@ end
 get '/products/low' do
   @products = Product.lowstock()
   erb( :"products/low")
+end
+
+get '/products/total' do
+  @total = Shop.stock_value
+  erb( :"products/total")
 end
 
 get '/products/:id' do

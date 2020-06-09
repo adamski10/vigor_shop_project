@@ -13,8 +13,4 @@ class Shop
     total = values.inject(:+)
     return total
   end
-
-binding.pry
-nil
-
 end
