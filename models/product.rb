@@ -20,6 +20,7 @@ class Product
     return retail_price.to_f
   end
 
+
   def save()
     sql = "INSERT INTO products
     (
@@ -99,4 +100,21 @@ class Product
     values = [@name, @category, @buying_price, @markup, @stock_level, @id]
     SqlRunner.run(sql, values)
   end
+
+  def Product.find_stock_level()
+    sql = "SELECT products.stock_level
+    FROM products"
+    product_data = SqlRunner.run(sql)
+    stock = product_data.map {|product| product['stock_level'].to_i}
+    return stock
+  end
+
+  def Product.find_buying_price()
+    sql = "SELECT products.buying_price
+    FROM products"
+    product_data = SqlRunner.run(sql)
+    buying_price = product_data.map {|product| product['buying_price'].to_f}
+    return buying_price
+  end
+
 end
