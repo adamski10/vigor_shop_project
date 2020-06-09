@@ -100,10 +100,21 @@ color: rgb(0, 0, 0);
   text-align: center;
 }
 
-
+ 
 /* td, th {
   border: 1px solid #999;
   padding: 0.5rem;
 } */
 
+a.link:hover {
+background-color: rgb(151, 195, 164);
+}
+
+a.link:active {
+background-color: rgb(46, 153, 60);
+}
+
+a.link:visited {
+color: rgb(0, 0, 0);
+}
 
