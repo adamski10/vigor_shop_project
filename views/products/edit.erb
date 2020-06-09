@@ -54,7 +54,7 @@
       <label for="manufacturer-field"></label>
         <select name="manufacturer_id" id="manufacturer-field">
           <% @manufacturers.each do |manufacturer| %>
-          <option value=<%= "selected" if manufacturer.id == true %> ><%= manufacturer.name %></option>
+          <option value=<%= manufacturer.id %> ><%= manufacturer.name %></option>
           <% end %>
         </select>
       </td>

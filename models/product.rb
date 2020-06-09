@@ -89,15 +89,16 @@ class Product
     (
       name,
       category,
+      manufacturer_id,
       buying_price,
       markup,
       stock_level
     ) =
     (
-      $1, $2, $3, $4, $5
+      $1, $2, $3, $4, $5, $6
     )
-    WHERE id = $6"
-    values = [@name, @category, @buying_price, @markup, @stock_level, @id]
+    WHERE id = $7"
+    values = [@name, @category, @manufacturer_id, @buying_price, @markup, @stock_level, @id]
     SqlRunner.run(sql, values)
   end
 

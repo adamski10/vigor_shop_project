@@ -23,6 +23,7 @@ body {
 }
 
 .menu-bar > .link {
+  border: 1px solid black;
   padding: 55px;
   align-items: center;
   font-size: 5mm;
