@@ -23,7 +23,15 @@ body {
   
 }
 
+.menu-bar > .logo {
+  height: 180px;
+  width: 180px;
+  border: 1px solid black;
+  
+}
+
 .menu-bar > .link {
+  height: 70px;
   border: 1px solid black;
   padding: 55px;
   align-items: center;
@@ -32,10 +40,7 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.menu-bar > .link {
-text-decoration-color: black;
-text-transform: capitalize;
-}
+
 
 .menu-bar > .link:hover {
 background-color: rgb(151, 195, 164);
@@ -76,11 +81,11 @@ color: rgb(0, 0, 0);
 }
 
 .low {
-  background-color: orangered;
+  background-color: rgb(223, 133, 100);
 }
 
 .nostock {
-  background-color: red;
+  background-color: rgb(151, 73, 73);
 }
 
 .footer {
@@ -95,16 +100,11 @@ color: rgb(0, 0, 0);
 
 .save-button {
   display: flex;
-  height: 10mm;
+  height: 7mm;
   justify-content: center;
   text-align: center;
 }
 
- 
-/* td, th {
-  border: 1px solid #999;
-  padding: 0.5rem;
-} */
 
 a.link:hover {
 background-color: rgb(151, 195, 164);
@@ -116,5 +116,10 @@ background-color: rgb(46, 153, 60);
 
 a.link:visited {
 color: rgb(0, 0, 0);
+}
+
+div > a.link {
+  display: flex;
+  justify-content: center;
 }
 
