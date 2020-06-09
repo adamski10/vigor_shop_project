@@ -20,6 +20,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  
 }
 
 .menu-bar > .link {
@@ -30,6 +31,27 @@ body {
   background-color: rgb(216, 218, 211);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+.menu-bar > .link {
+text-decoration-color: black;
+text-transform: capitalize;
+}
+
+.menu-bar > .link:hover {
+background-color: rgb(151, 195, 164);
+}
+
+.menu-bar > .link:active {
+background-color: rgb(46, 153, 60);
+}
+
+.menu-bar > .link:visited {
+color: rgb(0, 0, 0);
+}
+
+.menu-bar > .link a, a:visited {
+  color: black;
+  }
 
 .stock {
   text-align: center;
@@ -69,8 +91,16 @@ body {
   position:fixed;
   bottom:0;
   background-color: #DDE8DD
-  
 }
+
+.save-button {
+  display: flex;
+  height: 10mm;
+  justify-content: center;
+  text-align: center;
+}
+
+
 /* td, th {
   border: 1px solid #999;
   padding: 0.5rem;

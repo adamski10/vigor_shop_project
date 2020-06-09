@@ -9,11 +9,12 @@
       name="name"
       id="product-name-field"
       value=""
+      required
       />
     </td>
     <td>
       <label for="category-field">Enter category</label>
-        <select name="category" id="category-field">
+        <select name="category" id="category-field" required>
           <option selected disabled></option>
           <option value="flour">Flour</option>
           <option value="Fruit">Fruit</option>
@@ -32,11 +33,12 @@
       name="stock_level"
       id="stock_level-field"
       value="Enter number"
+      required
       />
     </td>
     <td>
       <label for="manufacturer-field">Manufacturer</label>
-        <select name="manufacturer_id" id="manufacturer-field">
+        <select name="manufacturer_id" id="manufacturer-field" required>
           <option selected disabled>Select from the list</option>
           <% @manufacturers.each do |manufacturer| %>
           <option value=<%= manufacturer.id %> ><%= manufacturer.name %></option>
@@ -52,6 +54,7 @@
       name="buying_price"
       id="buying_price-field"
       value="Enter number"
+      required
       />
     </td>
     <td>
@@ -64,6 +67,7 @@
       name="markup"
       id="markup-field"
       value="Enter number"
+      required
       />
     </td>
   </table>

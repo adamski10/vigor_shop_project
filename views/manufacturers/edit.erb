@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/style.css">
 <h2 class="stock">Edit Manufacturer</h2>
 <form method="post" action="/manufacturers/<%= @manufacturer.id %>">
-  <table class="table">
+  <table class="table" style="width:100%">
     <td>
       <label for="manufacturer-name-field">Name</label>
       <input
@@ -9,11 +9,12 @@
       name="name"
       id="manufacturer-name-field"
       value="<%= @manufacturer.name %>"
+      required
       />
     </td>
     <td>
       <label for="category-field">Category</label>
-        <select name="category" id="category-field">
+        <select name="category" id="category-field" required>
           <option value="flour"
           <%= "selected" if @manufacturer.category == "Flour"%>
           >Flour</option>
@@ -47,8 +48,11 @@
       name="contact_details"
       id="contact-details-field"
       value="<%= @manufacturer.contact_details %>"
+      required
       />
     </td>
   </table>
-  <input type="submit" value="Save">
+  <div class="save-button">
+    <input type="submit" value="Save">
+  </div>
 </form>

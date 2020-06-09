@@ -8,13 +8,13 @@
       type="text"
       name="name"
       id="product-name-field"
-      required
       value="<%= @product.name %>"
+      required
       />
     </td>
     <td>
       <label for="category-field"></label>
-        <select name="category" id="category-field">
+        <select name="category" id="category-field" required>
           <option value="flour"
           <%= "selected" if @product.category == "Flour"%>
           >Flour</option>
@@ -48,11 +48,12 @@
       name="stock_level"
       id="stock_level-field"
       value="<%= @product.stock_level %>"
+      required
       />
     </td>
     <td>
       <label for="manufacturer-field"></label>
-        <select name="manufacturer_id" id="manufacturer-field">
+        <select name="manufacturer_id" id="manufacturer-field" required>
           <% @manufacturers.each do |manufacturer| %>
           <option value=<%= manufacturer.id %> ><%= manufacturer.name %></option>
           <% end %>
@@ -65,6 +66,7 @@
       name="buying_price"
       id="buying_price-field"
       value="<%= @product.buying_price%>"
+      required
       />
     </td>
     <td>
@@ -74,6 +76,7 @@
       name="markup"
       id="markup-field"
       value="<%= @product.markup %>"
+      required
       />
     </td>
   </table>
