@@ -1,4 +1,13 @@
 <h1 class="stock">Stock list</h1>
+<div class="filter">Sort by category
+  <label for="category-field"></label>
+    <select name="category" id="category-field">
+      <option selected disabled>Select category</option>
+          <% @products.each do |product| %>
+          <option value=<%= product.category %>><%= product.category%></option>
+          <% end %>
+    </select>
+</div>
 <table class="table" style="width:100%">
   <thead>
     <tr>
