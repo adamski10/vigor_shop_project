@@ -17,7 +17,7 @@
     <% @products.each do |product| %>
     <tr>
       <td><%= product.name %></td>
-      <td><%= product.category %></td>
+      <td><%= product.get_category_name %></td>
       <td><%= product.units %></td>
       <td id="low-stock"><%= product.stock_level %></td>
       <td><%= product.manufacturer %></td>

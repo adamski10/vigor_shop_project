@@ -54,6 +54,16 @@ class Manufacturer
     result = manufacturers.map { |manufacturer| Manufacturer.new(manufacturer) }
     return result
   end
+
+  def get_category_name()
+    sql = "SELECT categories.name FROM categories
+    INNER JOIN manufacturers
+    ON manufacturers.category_id = categories.id
+    WHERE manufacturers.id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return Category.new(result.first).name
+  end
   
   def update()
     sql = "UPDATE manufacturers

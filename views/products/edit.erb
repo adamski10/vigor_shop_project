@@ -13,32 +13,11 @@
       />
     </td>
     <td>
-      <label for="category-field"></label>
-        <select name="category" id="category-field" required>
-          <option value="Flour"
-          <%= "selected" if @product.category == "Flour"%>
-          >Flour</option>
-          <option value="Fruit"
-          <%= "selected" if @product.category == "Fruit"%>
-          >Fruit</option>
-          <option value="Grain"
-          <%= "selected" if @product.category == "Grain"%>
-          >Grain</option>
-          <option value="Herbs"
-          <%= "selected" if @product.category == "Herbs"%>
-          >Herbs</option>
-          <option value="Honey"
-          <%= "selected" if @product.category == "Honey"%>
-          >Honey</option>
-          <option value="Nuts"
-          <%= "selected" if @product.category == "Nuts"%>
-          >Nuts</option>
-          <option value="Oil"
-          <%= "selected" if @product.category == "Oil"%>
-          >Oil</option>
-          <option value="Vegetable"
-          <%= "selected" if @product.category == "Vegetable"%>
-          >Vegetable</option>
+      <label for="category-field">Category</label>
+        <select name="category_id" id="category-field" required>
+          <% @categories.each do |category| %>
+          <option value=<%= category.id %> <%= "selected" if category.id == @product.category_id %> ><%= category.name%></option>
+          <% end %>
         </select>
     </td>
     <td>
@@ -65,7 +44,7 @@
       <label for="manufacturer-field"></label>
         <select name="manufacturer_id" id="manufacturer-field" required>
           <% @manufacturers.each do |manufacturer| %>
-          <option value=<%= manufacturer.id %> ><%= manufacturer.name %></option>
+          <option value=<%= manufacturer.id %> <%= "selected" if manufacturer.id == @product.manufacturer_id %>><%= manufacturer.name %></option>
           <% end %>
         </select>
       </td>

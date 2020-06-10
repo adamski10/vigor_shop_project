@@ -18,6 +18,7 @@ end
 
 get '/products/new' do
   @manufacturers = Manufacturer.all()
+  @categories = Category.all()
   erb( :"products/new")
 end
 
@@ -45,6 +46,7 @@ end
 get '/products/:id/edit' do
   @product = Product.find( params[:id] )
   @manufacturers = Manufacturer.all()
+  @categories = Category.all()
   erb(:"products/edit")
 end
 

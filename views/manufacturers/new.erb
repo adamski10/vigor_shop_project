@@ -14,15 +14,11 @@
     </td>
     <td>
       <label for="category-field">Category</label>
-        <select name="category" id="category-field" required>
-          <option value="Flour">Flour</option>
-          <option value="Fruit">Fruit</option>
-          <option value="Grain">Grain</option>
-          <option value="Herbs">Herbs</option>
-          <option value="Honey">Honey</option>
-          <option value="Nuts">Nuts</option>
-          <option value="Oil">Oil</option>
-          <option value="Vegetable">Vegetable</option>
+        <select name="category_id" id="category-field" required>
+          <option selected disabled>Select category</option>
+          <% @categories.each do |category| %>
+          <option value=<%= category.id %>><%= category.name%></option>
+          <% end %>
         </select>
     </td>
     <td>

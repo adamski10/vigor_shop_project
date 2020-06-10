@@ -8,7 +8,7 @@
   <% @manufacturers.each do |manufacturer| %>
   <tr>
     <td><a class="link" href="manufacturers/<%= manufacturer.id %>"><%= manufacturer.name %></td>
-    <td><%= manufacturer.category %></td>
+    <td><%= manufacturer.get_category_name %></td>
     <td><%= manufacturer.contact_details %></td>
   </tr>
   <% end %>

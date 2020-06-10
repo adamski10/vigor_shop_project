@@ -14,31 +14,10 @@
     </td>
     <td>
       <label for="category-field">Category</label>
-        <select name="category" id="category-field" required>
-          <option value="Flour"
-          <%= "selected" if @manufacturer.category == "Flour"%>
-          >Flour</option>
-          <option value="Fruit"
-          <%= "selected" if @manufacturer.category == "Fruit"%>
-          >Fruit</option>
-          <option value="Grain"
-          <%= "selected" if @manufacturer.category == "Grain"%>
-          >Grain</option>
-          <option value="Herbs"
-          <%= "selected" if @manufacturer.category == "Herbs"%>
-          >Herbs</option>
-          <option value="Honey"
-          <%= "selected" if @manufacturer.category == "Honey"%>
-          >Honey</option>
-          <option value="Nuts"
-          <%= "selected" if @manufacturer.category == "Nuts"%>
-          >Nuts</option>
-          <option value="Oil"
-          <%= "selected" if @manufacturer.category == "Oil"%>
-          >Oil</option>
-          <option value="Vegetable"
-          <%= "selected" if @manufacturer.category == "Vegetable"%>
-          >Vegetable</option>
+        <select name="category_id" id="category-field" required>
+          <% @categories.each do |category| %>
+          <option value=<%= category.id %> <%= "selected" if @manufacturer.category_id == category.id %> ><%= category.name%></option>
+          <% end %>
         </select>
       </td>
     <td>

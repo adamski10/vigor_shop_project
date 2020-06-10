@@ -8,7 +8,7 @@ class Product
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @category_id = options['category_id'].to_i
+    @category_id = options['category_id']
     @manufacturer_id = options['manufacturer_id'].to_i
     @buying_price = options['buying_price'].to_f
     @markup = options['markup'].to_f

@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/style.css">
 <p>Name: <%= @manufacturer.name %></p>
-<p>Category: <%= @manufacturer.category %></p>
+<p>Category: <%= @manufacturer.get_category_name %></p>
 <p>Contact details: <%= @manufacturer.contact_details %></p>
 <p><a href="/manufacturers/<%= @manufacturer.id %>/edit">Edit manufacturer</a></p>
