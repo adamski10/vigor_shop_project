@@ -4,7 +4,7 @@
     <select name="category" id="category-field">
       <option selected disabled>Select category</option>
           <% @categories.each do |category| %>
-          <option value=<%= category.name %>><%= category.name%></option>
+           <option value=<%= category.name %>><%= category.name%></option> %>
           <% end %>
     </select>
 </div>

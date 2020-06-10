@@ -1,8 +1,12 @@
 <link rel="stylesheet" href="/style.css">
-<p>Product Name: <%= @product.name %></p>
-<p>Category: <%= @product.get_category_name %></p>
-<p>Manufacturer: <%= @product.manufacturer %></p>
-<p>Buying Price: <%= @product.buying_price %></p>
-<p>Markup: <%= @product.markup %></p>
-<p>Stock Level: <%= @product.stock_level %></p>
+<div class="prod-deatils">
+  <ul>
+    <li>Product Name: <%= @product.name %></li>
+    <li>Category: <%= @product.get_category_name %></li>
+    <li>Manufacturer: <%= @product.manufacturer %></li>
+    <li>Buying Price: <%= @product.buying_price %></li>
+    <li>Markup: <%= sprintf('%.2f', @product.markup * 100) %>%</li>
+    <li>Stock Level: <%= @product.stock_level %></li>
+  </ul>
+</div>
 <p><a href="/products/<%= @product.id %>/edit">Edit product</a></p>
