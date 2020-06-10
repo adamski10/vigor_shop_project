@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" type="text/css" href="/style.css">
 <div class="prod-deatils">
   <ul>
     <li>Product Name: <%= @product.name %></li>
@@ -9,4 +9,4 @@
     <li>Stock Level: <%= @product.stock_level %></li>
   </ul>
 </div>
-<p><a href="/products/<%= @product.id %>/edit">Edit product</a></p>
+<p><a class="link" href="/products/<%= @product.id %>/edit">Edit product</a></p>
