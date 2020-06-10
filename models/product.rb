@@ -84,8 +84,8 @@ class Product
     ON products.category_id = categories.id
     WHERE products.id = $1"
     values = [id]
-    name = SqlRunner.run(sql, values)
-    return name
+    result = SqlRunner.run(sql, values)
+    return Category.new(result.first).name
   end
 
   def self.lowstock()
