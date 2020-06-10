@@ -1,12 +1,14 @@
+require_relative('../db/sql_runner.rb')
+
 class Manufacturer
 
-  attr_accessor  :name, :category, :contact_details
+  attr_accessor  :name, :category_id, :contact_details
   attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @category = options['category']
+    @category_id = options['category_id']
     @contact_details = options['contact_details']
   end
 
@@ -14,7 +16,7 @@ class Manufacturer
     sql = "INSERT INTO manufacturers
     (
       name,
-      category,
+      category_id,
       contact_details
     )
     VALUES
@@ -22,7 +24,7 @@ class Manufacturer
       $1, $2, $3
     )
     RETURNING *"
-    values = [@name, @category, @contact_details]
+    values = [@name, @category_id, @contact_details]
     manufacturer_data = SqlRunner.run(sql, values)
     @id = manufacturer_data.first()['id'].to_i
   end
@@ -43,8 +45,10 @@ class Manufacturer
   end
 
   def self.find_by_category(category)
-    sql = "SELECT * FROM manufacturers
-    WHERE manufacturers.category = $1"
+    sql = "SELECT manufacturers.* FROM manufacturers
+    INNER JOIN categories
+    ON manufacturers.category_id = categories.id
+    WHERE categories.name = $1"
     values = [category]
     manufacturers = SqlRunner.run(sql, values)
     result = manufacturers.map { |manufacturer| Manufacturer.new(manufacturer) }
@@ -56,14 +60,14 @@ class Manufacturer
     SET
     (
       name,
-      category,
+      category_id,
       contact_details
     ) =
     (
       $1, $2, $3
     )
     WHERE id = $4"
-    values = [@name, @category, @contact_details, @id]
+    values = [@name, @category_id, @contact_details, @id]
     SqlRunner.run(sql, values)
   end
 end

@@ -1,28 +1,48 @@
 require('pry')
+require_relative('../models/category')
 require_relative('../models/product')
 require_relative('../models/manufacturer')
+require_relative('../models/shop')
+
+category1 = Category.new({
+  "name" => "Flour"
+})
+category2 = Category.new({
+  "name" => "Oils"
+})
+category3 = Category.new({
+  "name" => "Grain"
+})
+category4 = Category.new({
+  "name" => "Nuts"
+})
+
+category1.save()
+category2.save()
+category3.save()
+category4.save()
 
 manufacturer1 = Manufacturer.new({
   "name" => "Doves Farms",
-  "category" => "Flour",
+  "category_id" => 1,
   "contact_details" => "Hungerford, RG17 0RF"
 })
 
 manufacturer2 = Manufacturer.new({
   "name" => "Juste Bio",
-  "category" => "Nuts",
+  "category_id" => 4,
   "contact_details" => "France, 0033 234 579"
 })
 
 manufacturer3 = Manufacturer.new({
   "name" => "Kiril Mischeff Limited",
-  "category" => "Oil",
+  "category_id" => 2,
   "contact_details" => "Notts, S81 7QF"
 })
 
 manufacturer4 = Manufacturer.new({
   "name" => "Little Salked Watermill",
-  "category" => "Flour",
+  "category_id" => 1,
   "contact_details" => "Penrith, CA10 INN"
 })
 
@@ -34,7 +54,7 @@ manufacturer4.save()
 
 product1 = Product.new({
   "name" => "Organic Spelt flour",
-  "category" => "Flour",
+  "category_id" => 1,
   "manufacturer_id" => 1,
   "buying_price" => 1.20,
   "markup" => 0.40,
@@ -44,7 +64,7 @@ product1 = Product.new({
 
 product2 = Product.new({
   "name" => "Organic cashew nuts",
-  "category" => "Nuts",
+  "category_id" => 4,
   "manufacturer_id" => 2,
   "buying_price" => 0.80,
   "markup" => 0.40,
@@ -54,7 +74,7 @@ product2 = Product.new({
 
 product3 = Product.new({
   "name" => "Cold pressed olive oil",
-  "category" => "Oil",
+  "category_id" => 2,
   "manufacturer_id" => 3,
   "buying_price" => 1.50,
   "markup" => 0.40,
@@ -64,7 +84,7 @@ product3 = Product.new({
 
 product4 = Product.new({
   "name" => "Organic Rye flour",
-  "category" => "Flour",
+  "category_id" => 1,
   "manufacturer_id" => 4,
   "buying_price" => 1.20,
   "markup" => 0.40,

@@ -5,12 +5,14 @@ require( 'pry' )
 require_relative( '../models/product' )
 require_relative( '../models/manufacturer' )
 require_relative( '../models/shop' )
+require_relative( '../models/category' )
 
 
 also_reload( './models/*' )
 
 get '/products' do
   @products  = Product.all()
+  @categories = Category.all()
   erb( :"products/index" )
 end
 

@@ -2,13 +2,13 @@ require_relative('../db/sql_runner.rb')
 
 class Product
 
-  attr_accessor :manufacturer_id, :name, :category, :buying_price, :markup, :units, :stock_level
-  attr_reader :id
+  attr_accessor :name, :category_id, :manufacturer_id, :buying_price, :markup, :units, :stock_level
+  attr_reader :id 
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
-    @category = options['category']
+    @category_id = options['category_id'].to_i
     @manufacturer_id = options['manufacturer_id'].to_i
     @buying_price = options['buying_price'].to_f
     @markup = options['markup'].to_f
@@ -26,7 +26,7 @@ class Product
     sql = "INSERT INTO products
     (
       name,
-      category,
+      category_id,
       manufacturer_id,
       buying_price,
       markup,
@@ -38,7 +38,7 @@ class Product
       $1, $2, $3, $4, $5, $6, $7
     )
     RETURNING *"
-    values = [@name, @category, @manufacturer_id, @buying_price, @markup, @units, @stock_level]
+    values = [@name, @category_id, @manufacturer_id, @buying_price, @markup, @units, @stock_level]
     product_data = SqlRunner.run(sql, values)
     @id = product_data.first()['id'].to_i
   end
@@ -68,12 +68,24 @@ class Product
   end
 
   def self.find_by_category(category)
-    sql = "SELECT * FROM products
-    WHERE products.category = $1"
+    sql = "SELECT products.* FROM products
+    INNER JOIN categories
+    ON products.category_id = categories.id
+    WHERE categories.name = $1"
     values = [category]
     products = SqlRunner.run(sql, values)
     result = products.map { |product| Product.new(product) }
     return result
+  end
+
+  def get_category_name()
+    sql = "SELECT categories.name FROM categories
+    INNER JOIN products
+    ON products.category_id = categories.id
+    WHERE products.id = $1"
+    values = [id]
+    name = SqlRunner.run(sql, values)
+    return name
   end
 
   def self.lowstock()
@@ -90,7 +102,7 @@ class Product
     SET
     (
       name,
-      category,
+      category_id,
       manufacturer_id,
       buying_price,
       markup,
@@ -101,7 +113,7 @@ class Product
       $1, $2, $3, $4, $5, $6, $7
     )
     WHERE id = $8"
-    values = [@name, @category, @manufacturer_id, @buying_price, @markup, @units, @stock_level, @id]
+    values = [@name, @category_id, @manufacturer_id, @buying_price, @markup, @units, @stock_level, @id]
     SqlRunner.run(sql, values)
   end
 
