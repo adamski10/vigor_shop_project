@@ -11,6 +11,13 @@ class Shop
     buying_prices = Product.find_buying_price()
     values = stock_numbers.zip(buying_prices).map{|stock_number, buying_price| stock_number * buying_price}
     total = values.inject(:+)
-    return total
+    if total == nil
+      return 0
+    else 
+      return total
+    end
   end
+  
+
+  
 end
