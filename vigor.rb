@@ -10,3 +10,5 @@ also_reload( './models/*' )
 get '/' do
   erb ( :index )
 end
+
+set :bind, '0.0.0.0'

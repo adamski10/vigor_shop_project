@@ -3,17 +3,20 @@
 <head>
   <title>Vigor foods</title>
   <link rel="stylesheet" href="../style.css">
+  <meta name=”viewport” content=”width=device-width, initial-scale=1″>
   
 </head>
 <body>
 <nav>
   <section class="menu-bar">
     <img class="logo"src="../vigor_logo.png">
-    <div class="link"><a href="/products/low">Low Stock</a></div>
-    <div class="link"><a href="/products/new">Add new product</a></div>
-    <div class="link"><a href="/manufacturers/new">Add new manufacturer</a></div>
-    <div class="link"><a href="/manufacturers">Manufacturers</a></div>
-    <div class="link"><a href="/products">Products</a></div>
+    <div class="menu-wrapper">
+      <a href="/products/low"><div class="menu-link">Low Stock</div></a>
+      <a href="/products/new"><div class="menu-link">Add new product</div></a>
+      <a href="/manufacturers/new"><div class="menu-link">Add new manufacturer</div></a>
+      <a href="/manufacturers"><div class="menu-link">Manufacturers</div></a>
+      <a href="/products"><div class="menu-link">Products</div></a>
+    </div>
   </section>
 </nav>
   <%= yield %>
